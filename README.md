@@ -1,3 +1,5 @@
+Netlify Deploy Link: https://lucky-sfogliatella-ab7bfa.netlify.app/
+
 # Block 27C Workshop: Puppy Bowl Event
 
 ## Overview

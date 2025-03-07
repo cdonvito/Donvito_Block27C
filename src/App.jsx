@@ -1,6 +1,8 @@
 // Import the React library, which allows us to define components
-
 // Import the Players component, which we'll use to show a list of players
+
+import React from "react";
+import Players from "./features/players/Players.jsx";
 
 // Define the App component
 function App() {
@@ -14,3 +16,4 @@ function App() {
 }
 
 // Export the App component as the default export
+export default App;

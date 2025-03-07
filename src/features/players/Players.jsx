@@ -1,6 +1,7 @@
 // Import the React library
-
 // Import the generated hook from our RTK Query API slice
+
+import React from "react";
 
 // Define a new React component
 const Players = () => {
@@ -40,3 +41,5 @@ const Players = () => {
 };
 
 // Export the component so it can be imported and used in other files
+
+export default Players;
