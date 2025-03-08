@@ -1,8 +1,9 @@
 // Import the React library
-// Import the generated hook from our RTK Query API slice
-
 import React from "react";
 
+// Import the generated hook from our RTK Query API slice
+import { useFetchPlayersQuery } from "../../api/puppyBowlApi";
+1;
 // Define a new React component
 const Players = () => {
   // Use the generated hook to fetch data from the API
@@ -12,10 +13,20 @@ const Players = () => {
 
   // Show a loading message while data is being fetched
   if (isLoading) {
+    return (
+      <section>
+        <h2>Loading...</h2>
+      </section>
+    );
   }
 
   // Show an error message if the fetch failed
   if (error) {
+    return (
+      <section>
+        <h2>Error, please try again later.</h2>
+      </section>
+    );
   }
 
   // Show the fetched data after it has arrived
@@ -24,15 +35,33 @@ const Players = () => {
       {/* Map through the data array and generate a div for each player */}
       {data.data.players.map((player) => (
         // Use the player's ID as the key for this div
-        <div key={player.id} className="player-card">
-          {/* Display the player's image, with the player's name as alt text */}
+        <div key={player.id} className="player-card" alt="player.name">
+          {
+            /* Display the player's image, with the player's name as alt text */
+            player.imageUrl
+          }
 
           <div className="player-details">
-            <h2> {/* Display the player's name */} </h2>
+            <h2>
+              {
+                /* Display the player's name */
+                player.name
+              }
+            </h2>
 
-            <p> {/* Display the player's breed */} </p>
+            <p>
+              {
+                /* Display the player's breed */
+                player.breed
+              }
+            </p>
 
-            <p> {/* Display the player's status */} </p>
+            <p>
+              {
+                /* Display the player's status */
+                player.status
+              }
+            </p>
           </div>
         </div>
       ))}
