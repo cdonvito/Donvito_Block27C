@@ -22,4 +22,4 @@ export const puppyBowlApi = createApi({
 });
 
 // Export hooks for each endpoint - in this case, a React hook that triggers the fetchPlayers query
-export const useFetchPlayersQuery = puppyBowlApi;
+export const { usePlayersQuery } = puppyBowlApi;

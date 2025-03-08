@@ -1,6 +1,5 @@
 // Import the React library, which allows us to define components
 // Import the Players component, which we'll use to show a list of players
-
 import React from "react";
 import Players from "./features/players/Players.jsx";
 
@@ -11,7 +10,9 @@ function App() {
   return (
     <section>
       <h1>Puppy Players</h1>
-      <div className="App">{Players}</div>
+      <div className="App">
+        <Players />
+      </div>
     </section>
   );
 }

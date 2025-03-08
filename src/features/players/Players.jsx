@@ -2,14 +2,13 @@
 import React from "react";
 
 // Import the generated hook from our RTK Query API slice
-import { useFetchPlayersQuery } from "../../api/puppyBowlApi";
-1;
+import { usePlayersQuery } from "../../api/puppyBowlApi";
 // Define a new React component
 const Players = () => {
   // Use the generated hook to fetch data from the API
   // When the component is first rendered, it will start the API fetch
   // It will re-render each time the fetch status changes (e.g., "loading", "data arrived", "error")
-  const { data = {}, error, isLoading } = useFetchPlayersQuery();
+  const { data = {}, error, isLoading } = usePlayersQuery();
 
   // Show a loading message while data is being fetched
   if (isLoading) {
@@ -35,11 +34,9 @@ const Players = () => {
       {/* Map through the data array and generate a div for each player */}
       {data.data.players.map((player) => (
         // Use the player's ID as the key for this div
-        <div key={player.id} className="player-card" alt="player.name">
-          {
-            /* Display the player's image, with the player's name as alt text */
-            player.imageUrl
-          }
+        <div key={player.id} className="player-card">
+          {/* Display the player's image, with the player's name as alt text */}
+          <img src={player.imageUrl} alt={player.name} className="player-image" />
 
           <div className="player-details">
             <h2>
